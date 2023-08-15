@@ -1,5 +1,5 @@
 import express from 'express';
-import { getCarValue } from '../controllers/carController';
+import { getCarValue } from '../controllers/carValueController';
 
 const router = express.Router();
 
