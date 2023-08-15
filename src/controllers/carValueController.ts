@@ -4,12 +4,16 @@ export const getCarValue = (req: Request, res: Response) => {
     try {
         const { model, year } = req.body;
 
-        // Validation checks
         if (!model || !year) {
             return res.status(400).json({ error: 'Model and year are required' });
         }
-        if (typeof model !== 'string' || typeof year !== 'number') {
-            return res.status(400).json({ error: 'Invalid input data' });
+
+        if (typeof model !== 'string') {
+            return res.status(400).json({ error: 'Model should be a string' });
+        }
+
+        if (typeof year !== 'number' || isNaN(year) || year < 2000 || year > new Date().getFullYear() || year < 0) {
+            return res.status(400).json({ error: 'Invalid year' });
         }
 
         const carValue = calculateCarValue(model, year);
@@ -21,7 +25,8 @@ export const getCarValue = (req: Request, res: Response) => {
     }
 };
 
-export function calculateCarValue(model: string, year: number): number {
+
+const calculateCarValue = (model: string, year: number): number => {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     let carValue = 0;
 
