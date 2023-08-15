@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "L5-Mission-1/src",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["L5-Mission-1/src/**/*.ts"],
+  "exclude": ["L5-Mission-1/node_modules"]
+}
