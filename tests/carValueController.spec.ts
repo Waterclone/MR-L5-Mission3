@@ -1,19 +1,18 @@
-import request from 'supertest';
-import app from '../src/app'; 
-
+import request from "supertest";
+import app from "../src/app";
 
 describe('Convert "Model" and "Year" of a car to "Car Value"', () => {
-  it('should calculate for valid input, for example (Civic, 2014)', async () => {
+  it("should calculate for valid input, for example (Civic, 2014)", async () => {
     // Arrange
-    const expected = { model: 'Civic', year: 2014 };
+    const expected = { model: "Civic", year: 2014 };
 
     // Act
-    const response = await request(app).post('/api/carvalue').send({ model: 'Civic', year: 2014 });
-    const actual = response.body; 
+    const response = await request(app).post("/api/carvalue").send({ model: "Civic", year: 2014 });
+    const actual = response.body;
 
     // Assert
     expect(response.status).toBe(200);
-    expect(actual).toEqual(expected); 
+    expect(actual).toEqual(expected);
   });
 
   // it('should accept model with space (Ford Mustang, 2021)', async () => {
@@ -84,4 +83,3 @@ describe('Convert "Model" and "Year" of a car to "Car Value"', () => {
 
   // Add similar sections for other test cases
 });
-

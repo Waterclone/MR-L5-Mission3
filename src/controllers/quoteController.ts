@@ -1,19 +1,24 @@
 import { Request, Response } from "express";
 
-interface PremiumRequest {
-  car_value: number;
-  risk_rating: number;
+interface PremiumRequest extends Request {
+  body: {
+    model?: string;
+    year?: number;
+    claim_history?: string;
+    car_value?: number;
+    risk_rating?: number;
+  };
 }
 
-export const getQuote = (req: Request, res: Response) => {
+export const getQuote = (req: PremiumRequest, res: Response) => {
   try {
-    const { car_value, risk_rating } = req.body as PremiumRequest;
+    const { car_value, risk_rating } = req.body;
 
-    if (!car_value || !risk_rating) {
+    if (!car_value || !risk_rating || risk_rating > 5 || risk_rating < 1) {
       return res.status(400).json({ error: "Missing parameters" });
     }
 
-    const calculatePremium = ({ car_value, risk_rating }: PremiumRequest) => {
+    const calculatePremium = ({ car_value, risk_rating }: { car_value: number; risk_rating: number }) => {
       const yearlyPremium = car_value * (risk_rating / 100);
       const monthlyPremium = yearlyPremium / 12;
       return {

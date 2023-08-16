@@ -3,6 +3,6 @@ import { getRisk } from "../controllers/riskController";
 
 const router = express.Router();
 
-router.get("/", getRisk);
+router.post("/", getRisk);
 
 export default router;
