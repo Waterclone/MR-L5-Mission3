@@ -1,18 +1,28 @@
 import { Request, Response } from "express";
 
-export const getRisk = (req: Request, res: Response) => {
+interface RiskRequest extends Request {
+  body: {
+    model?: string;
+    year?: number;
+    claim_history?: string;
+    car_value?: number;
+    risk_rating?: number;
+  };
+}
+
+export const getRisk = (req: RiskRequest, res: Response) => {
   try {
     const { claim_history } = req.body;
 
     if (!claim_history || claim_history.trim() === "") {
-      res.status(400).send({ error: "Invalid value or missing claim_history parameter" });
+      res.status(400).send({ error: "Invalid value or missing claim history" });
       return;
     } else {
-      const keywords = ["collide", "crash", "scratch", "bump", "smash"];
+      const keywords: string[] = ["collide", "crash", "scratch", "bump", "smash"];
 
-      const occurrences = keywords.reduce((count, keyword) => count + (claim_history.toLowerCase().split(keyword).length - 1), 0);
+      const occurrences: number = keywords.reduce((count: number, keyword: string) => count + (claim_history.toLowerCase().split(keyword).length - 1), 0);
 
-      let riskRating;
+      let riskRating: number;
       if (occurrences <= 1) {
         riskRating = 1;
       } else if (occurrences <= 2) {
