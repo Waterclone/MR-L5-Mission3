@@ -7,32 +7,26 @@ import carRecognitionRoutes from "./routes/carRecognitionRoutes";
 import dotenv from "dotenv";
 import cors from 'cors';
 import multer from 'multer';
-import bodyParser from 'body-parser'; // Import body-parser
+import bodyParser from 'body-parser'; 
 
 dotenv.config();
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
-
 const app: Express = express();
-
-// Use body-parser for JSON parsing and set payload size limit
 app.use(bodyParser.json({ limit: '10mb' }));
-
-// Use multer for handling file uploads
 app.use(upload.single('file'));
-
-// Enable CORS for frontend communication
 app.use(cors({
   origin: 'http://localhost:3000'
 }));
 
-// API routes
+
 app.use("/api/carvalue", carValueRoutes);
 app.use("/api/riskrating2", riskRatingRoutes2);
 app.use("/api/riskrating", riskRoutes);
 app.use("/api/premiumquote", quoteRoutes);
 app.use("/api/upload", carRecognitionRoutes);
+
 
 const port: number = Number(process.env.PORT) || 8000;
 app.listen(port, () => {
