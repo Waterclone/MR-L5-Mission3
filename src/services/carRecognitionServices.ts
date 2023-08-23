@@ -27,7 +27,7 @@ export default async function makePrediction(imageData: string): Promise<any> {
     if (error instanceof AxiosError) {
       throw new Error('Prediction failed: ' + error.message);
     } else {
-      throw new Error('carReognitionServices not working.');
+      throw new Error('carRecognitionServices not working.');
     }
   }
 }
