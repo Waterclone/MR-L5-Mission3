@@ -1,7 +1,8 @@
-import { calculateCarValue } from '../src/services/carValueServices';
+import { calculateCarValue } from "../src/services/carValueServices";
+import { describe, it, expect } from "@jest/globals";
 
 describe('Convert car model and year to a "Car Value"', () => {
-  it('should calculate for valid input and return a value of number types', () => {
+  it("should calculate for valid input and return a value of number types", () => {
     // Arrange
     const model = "Civic";
     const year = 2014;
@@ -14,7 +15,7 @@ describe('Convert car model and year to a "Car Value"', () => {
     expect(actual).toBe(expected);
   });
 
-  it('should calculate car value for model with space', () => {
+  it("should calculate car value for model with space", () => {
     // Arrange
     const model = "Ford Mustang";
     const year = 2021;
@@ -27,7 +28,7 @@ describe('Convert car model and year to a "Car Value"', () => {
     expect(actual).toBe(expected);
   });
 
-  it('should calculate car value for model with symbols', () => {
+  it("should calculate car value for model with symbols", () => {
     // Arrange
     const model = "CX-@";
     const year = 2020;
@@ -40,7 +41,7 @@ describe('Convert car model and year to a "Car Value"', () => {
     expect(actual).toBe(expected);
   });
 
-  it('should calculate car value for model name with number on it', () => {
+  it("should calculate car value for model name with number on it", () => {
     // Arrange
     const model = "Toyota 86";
     const year = 2010;
@@ -53,8 +54,7 @@ describe('Convert car model and year to a "Car Value"', () => {
     expect(actual).toBe(expected);
   });
 
-
-//----Expecting Error message
+  //----Expecting Error message
 
   it("should throw an error for empty string", () => {
     // Arrange
@@ -63,65 +63,61 @@ describe('Convert car model and year to a "Car Value"', () => {
     const expectedError = "Invalid input";
 
     // Act
-    const actual = () => calculateCarValue(model, year) 
+    const actual = () => calculateCarValue(model, year);
 
     // Assert
     expect(actual).toThrow(expectedError);
   });
 
-  it('should return error for older year less than 2000', () => {
+  it("should return error for older year less than 2000", () => {
     // Arrange
     const model = "Accord";
     const year = 1995;
     const expectedError = "Invalid input";
 
     // Act
-    const actual = () => calculateCarValue(model, year)
+    const actual = () => calculateCarValue(model, year);
 
     // Assert
     expect(actual).toThrow(expectedError);
   });
 
-  it('should throw an error for negative year', () => {
+  it("should throw an error for negative year", () => {
     // Arrange
     const model = "Impreza";
     const year = -555;
     const expectedError = "Invalid input";
 
     // Act
-    const actual = () => calculateCarValue(model, year)
+    const actual = () => calculateCarValue(model, year);
 
     // Assert
     expect(actual).toThrow(expectedError);
   });
 
-  it('should return error for floating-point number', () => {
+  it("should return error for floating-point number", () => {
     // Arrange
     const model = "Prius";
-    const year = 2010.10;
+    const year = 2010.1;
     const expectedError = "Invalid input";
 
     // Act
-    const actual = () => calculateCarValue(model, year)
+    const actual = () => calculateCarValue(model, year);
 
     // Assert
     expect(actual).toThrow(expectedError);
   });
 
-  it('should return error for future year', () => {
+  it("should return error for future year", () => {
     // Arrange
     const model = "Axela";
     const year = 2025;
     const expectedError = "Invalid input";
 
     // Act
-    const actual = () => calculateCarValue(model, year)
+    const actual = () => calculateCarValue(model, year);
 
     // Assert
     expect(actual).toThrow(expectedError);
   });
-
-
-
 });
-

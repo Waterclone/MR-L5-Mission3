@@ -1,61 +1,34 @@
-import express, { Application } from 'express';
+import express, { Application } from "express";
 // import carValueRoutes from "./routes/carValueRoutes";
 // import riskRatingRoutes2 from "./routes/riskRatingRoutes2";
 // import riskRoutes from "./routes/riskRoutes";
 // import quoteRoutes from "./routes/quoteRoutes";
 // import carRecognitionRoutes from "./routes/carRecognitionRoutes";
-import carFinderRoute from './routes/carFinderRoute'; 
-import bodyParser from 'body-parser';
-import cors from 'cors';
-import dotenv from 'dotenv';
-
+import carFinderRoute from "./routes/carFinderRoute";
+import carColourSearchRoute from "./routes/carColourSearchRoute";
+import bodyParser from "body-parser";
+import cors from "cors";
+import dotenv from "dotenv";
 
 dotenv.config();
 const app: Application = express();
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: "http://localhost:3000" }));
 app.use(bodyParser.json());
-
 
 // app.use("/api/carvalue", carValueRoutes);
 // app.use("/api/riskrating2", riskRatingRoutes2);
 // app.use("/api/riskrating", riskRoutes);
 // app.use("/api/premiumquote", quoteRoutes);
-app.use('/api/upload', carFinderRoute); 
-
+app.use("/api/upload", carFinderRoute);
+app.use("/api/search/colour", carColourSearchRoute);
 
 const port: number = Number(process.env.PORT) || 8000;
 app.listen(port, () => {
   console.log(`Server started and listening on port ${port}`);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ------Single File Version------
-
 
 // import express, { Application, Request, Response } from 'express';
 // import bodyParser from 'body-parser';
@@ -82,9 +55,8 @@ app.listen(port, () => {
 //     return res.status(400).json({ message: 'No file uploaded.' });
 //   }
 
-//   const image = req.file.buffer; 
-//   const predictionEndpoint = process.env.PREDICTION_ENDPOINT ?? ''; 
-
+//   const image = req.file.buffer;
+//   const predictionEndpoint = process.env.PREDICTION_ENDPOINT ?? '';
 
 //   try {
 //     const predictionResponse = await axios.post(
@@ -131,4 +103,3 @@ app.listen(port, () => {
 // app.listen(PORT, () => {
 //   console.log(`Server is running on port ${PORT}`);
 // });
-

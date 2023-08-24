@@ -1,213 +1,214 @@
 const carData = [
-    // Sedan
-    {
-      "id": 1,
-      "type": "sedan",
-      "make": "Mazda",
-      "model": "Axela",
-      "year": 2022,
-      "image": "/data/cars/car_types/sedan/axela.jpeg"
-    },
-    {
-      "id": 2,
-      "type": "sedan",
-      "make": "Honda",
-      "model": "Accord",
-      "year": 2022,
-      "image": "/data/cars/car_types/sedan/accord.jpeg"
-    },
-    {
-      "id": 3,
-      "type": "sedan",
-      "make": "Honda",
-      "model": "Civic",
-      "year": 2021,
-      "image": "/data/cars/car_types/sedan/civic.jpeg"
-    },
-    {
-      "id": 4,
-      "type": "sedan",
-      "make": "Ford",
-      "model": "Fusion",
-      "year": 2022,
-      "image": "/data/cars/car_types/sedan/fusion.jpeg"
-    },
-    {
-      "id": 5,
-      "type": "sedan",
-      "make": "Chevrolet",
-      "model": "Malibu",
-      "year": 2021,
-      "image": "/data/cars/car_types/sedan/malibu.jpeg"
-    },
-    
-    // Hatchback
-    {
-      "id": 11,
-      "type": "hatchback",
-      "make": "Volkswagen",
-      "model": "Golf",
-      "year": 2021,
-      "image": "/data/cars/car_types/hatchback/golf.jpeg"
-    },
-    {
-      "id": 12,
-      "type": "hatchback",
-      "make": "Ford",
-      "model": "Focus",
-      "year": 2022,
-      "image": "/data/cars/car_types/hatchback/focus.jpeg"
-    },
-    {
-      "id": 13,
-      "type": "hatchback",
-      "make": "Honda",
-      "model": "Fit",
-      "year": 2021,
-      "image": "/data/cars/car_types/hatchback/fit.jpeg"
-    },
-    {
-      "id": 14,
-      "type": "hatchback",
-      "make": "Toyota",
-      "model": "Corolla Hatchback",
-      "year": 2022,
-      "image": "/data/cars/car_types/hatchback/corolla.jpeg"
-    },
-    {
-      "id": 15,
-      "type": "hatchback",
-      "make": "Mazda",
-      "model": "Mazda3",
-      "year": 2021,
-      "image": "/data/cars/car_types/hatchback/mazda3.jpeg"
-    },
-    
-    // SUV
-    {
-      "id": 21,
-      "type": "SUV",
-      "make": "Toyota",
-      "model": "Rav4",
-      "year": 2021,
-      "image": "/data/cars/car_types/suv/rav4.jpeg"
-    },
-    {
-      "id": 22,
-      "type": "SUV",
-      "make": "Nissan",
-      "model": "Rogue",
-      "year": 2022,
-      "image": "/data/cars/car_types/suv/rogue.jpeg"
-    },
-    {
-      "id": 23,
-      "type": "SUV",
-      "make": "Ford",
-      "model": "Escape",
-      "year": 2022,
-      "image": "/data/cars/car_types/suv/escape.jpeg"
-    },
-    {
-      "id": 24,
-      "type": "SUV",
-      "make": "Honda",
-      "model": "CR-V",
-      "year": 2021,
-      "image": "/data/cars/car_types/suv/cr-v.jpeg"
-    },
-    {
-      "id": 25,
-      "type": "SUV",
-      "make": "Chevrolet",
-      "model": "Equinox",
-      "year": 2022,
-      "image": "/data/cars/car_types/suv/equinox.jpeg"
-    },
-    
-    // Vans
-    {
-      "id": 31,
-      "type": "van",
-      "make": "Chrysler",
-      "model": "Pacifica",
-      "year": 2021,
-      "image": "/data/cars/car_types/van/pacifica.jpeg"
-    },
-    {
-      "id": 32,
-      "type": "van",
-      "make": "Honda",
-      "model": "Odyssey",
-      "year": 2022,
-      "image": "/data/cars/car_types/van/odyssey.jpeg"
-    },
-    {
-      "id": 33,
-      "type": "van",
-      "make": "Toyota",
-      "model": "Sienna",
-      "year": 2021,
-      "image": "/data/cars/car_types/van/sienna.jpeg"
-    },
-    {
-      "id": 34,
-      "type": "van",
-      "make": "Kia",
-      "model": "Sedona",
-      "year": 2022,
-      "image": "/data/cars/car_types/van/sedona.jpeg"
-    },
-    {
-      "id": 35,
-      "type": "van",
-      "make": "Ford",
-      "model": "Transit",
-      "year": 2021,
-      "image": "/data/cars/car_types/van/transit.jpeg"
-    },
-    
-    // Ute
-    {
-      "id": 41,
-      "type": "ute",
-      "make": "Ford",
-      "model": "Ranger",
-      "year": 2022,
-      "image": "/data/cars/car_types/ute/ranger.jpeg"
-    },
-    {
-      "id": 42,
-      "type": "ute",
-      "make": "Toyota",
-      "model": "Hilux",
-      "year": 2021,
-      "image": "/data/cars/car_types/ute/hilux.jpeg"
-    },
-    {
-      "id": 43,
-      "type": "ute",
-      "make": "Chevrolet",
-      "model": "Colorado",
-      "year": 2022,
-      "image": "/data/cars/car_types/ute/colorado.jpeg"
-    },
-    {
-      "id": 44,
-      "type": "ute",
-      "make": "Nissan",
-      "model": "Navara",
-      "year": 2021,
-      "image": "/data/cars/car_types/ute/navara.jpeg"
-    },
-    {
-      "id": 45,
-      "type": "ute",
-      "make": "Mitsubishi",
-      "model": "Triton",
-      "year": 2022,
-      "image": "/data/cars/car_types/ute/triton.jpeg"
-    }
-  ];
-  
-  export default carData;
+  // Sedan
+  {
+    id: 1,
+    type: "sedan",
+    make: "Mazda",
+    model: "Axela",
+    year: 2022,
+    image: "/data/cars/car_types/sedan/axela.jpeg",
+    color: "black",
+  },
+  {
+    id: 2,
+    type: "sedan",
+    make: "Honda",
+    model: "Accord",
+    year: 2022,
+    image: "/data/cars/car_types/sedan/accord.jpeg",
+  },
+  {
+    id: 3,
+    type: "sedan",
+    make: "Honda",
+    model: "Civic",
+    year: 2021,
+    image: "/data/cars/car_types/sedan/civic.jpeg",
+  },
+  {
+    id: 4,
+    type: "sedan",
+    make: "Ford",
+    model: "Fusion",
+    year: 2022,
+    image: "/data/cars/car_types/sedan/fusion.jpeg",
+  },
+  {
+    id: 5,
+    type: "sedan",
+    make: "Chevrolet",
+    model: "Malibu",
+    year: 2021,
+    image: "/data/cars/car_types/sedan/malibu.jpeg",
+  },
+
+  // Hatchback
+  {
+    id: 11,
+    type: "hatchback",
+    make: "Volkswagen",
+    model: "Golf",
+    year: 2021,
+    image: "/data/cars/car_types/hatchback/golf.jpeg",
+  },
+  {
+    id: 12,
+    type: "hatchback",
+    make: "Ford",
+    model: "Focus",
+    year: 2022,
+    image: "/data/cars/car_types/hatchback/focus.jpeg",
+  },
+  {
+    id: 13,
+    type: "hatchback",
+    make: "Honda",
+    model: "Fit",
+    year: 2021,
+    image: "/data/cars/car_types/hatchback/fit.jpeg",
+  },
+  {
+    id: 14,
+    type: "hatchback",
+    make: "Toyota",
+    model: "Corolla Hatchback",
+    year: 2022,
+    image: "/data/cars/car_types/hatchback/corolla.jpeg",
+  },
+  {
+    id: 15,
+    type: "hatchback",
+    make: "Mazda",
+    model: "Mazda3",
+    year: 2021,
+    image: "/data/cars/car_types/hatchback/mazda3.jpeg",
+  },
+
+  // SUV
+  {
+    id: 21,
+    type: "SUV",
+    make: "Toyota",
+    model: "Rav4",
+    year: 2021,
+    image: "/data/cars/car_types/suv/rav4.jpeg",
+  },
+  {
+    id: 22,
+    type: "SUV",
+    make: "Nissan",
+    model: "Rogue",
+    year: 2022,
+    image: "/data/cars/car_types/suv/rogue.jpeg",
+  },
+  {
+    id: 23,
+    type: "SUV",
+    make: "Ford",
+    model: "Escape",
+    year: 2022,
+    image: "/data/cars/car_types/suv/escape.jpeg",
+  },
+  {
+    id: 24,
+    type: "SUV",
+    make: "Honda",
+    model: "CR-V",
+    year: 2021,
+    image: "/data/cars/car_types/suv/cr-v.jpeg",
+  },
+  {
+    id: 25,
+    type: "SUV",
+    make: "Chevrolet",
+    model: "Equinox",
+    year: 2022,
+    image: "/data/cars/car_types/suv/equinox.jpeg",
+  },
+
+  // Vans
+  {
+    id: 31,
+    type: "van",
+    make: "Chrysler",
+    model: "Pacifica",
+    year: 2021,
+    image: "/data/cars/car_types/van/pacifica.jpeg",
+  },
+  {
+    id: 32,
+    type: "van",
+    make: "Honda",
+    model: "Odyssey",
+    year: 2022,
+    image: "/data/cars/car_types/van/odyssey.jpeg",
+  },
+  {
+    id: 33,
+    type: "van",
+    make: "Toyota",
+    model: "Sienna",
+    year: 2021,
+    image: "/data/cars/car_types/van/sienna.jpeg",
+  },
+  {
+    id: 34,
+    type: "van",
+    make: "Kia",
+    model: "Sedona",
+    year: 2022,
+    image: "/data/cars/car_types/van/sedona.jpeg",
+  },
+  {
+    id: 35,
+    type: "van",
+    make: "Ford",
+    model: "Transit",
+    year: 2021,
+    image: "/data/cars/car_types/van/transit.jpeg",
+  },
+
+  // Ute
+  {
+    id: 41,
+    type: "ute",
+    make: "Ford",
+    model: "Ranger",
+    year: 2022,
+    image: "/data/cars/car_types/ute/ranger.jpeg",
+  },
+  {
+    id: 42,
+    type: "ute",
+    make: "Toyota",
+    model: "Hilux",
+    year: 2021,
+    image: "/data/cars/car_types/ute/hilux.jpeg",
+  },
+  {
+    id: 43,
+    type: "ute",
+    make: "Chevrolet",
+    model: "Colorado",
+    year: 2022,
+    image: "/data/cars/car_types/ute/colorado.jpeg",
+  },
+  {
+    id: 44,
+    type: "ute",
+    make: "Nissan",
+    model: "Navara",
+    year: 2021,
+    image: "/data/cars/car_types/ute/navara.jpeg",
+  },
+  {
+    id: 45,
+    type: "ute",
+    make: "Mitsubishi",
+    model: "Triton",
+    year: 2022,
+    image: "/data/cars/car_types/ute/triton.jpeg",
+  },
+];
+
+export default carData;

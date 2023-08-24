@@ -1,4 +1,5 @@
 import { calculateQuote } from "../src/services/quoteServices";
+import { describe, it, expect } from "@jest/globals";
 
 describe("premium quote tests", () => {
   it("should return monthly premium: 22 and yearly premium: 264. sunshine scenario", () => {

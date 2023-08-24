@@ -1,4 +1,5 @@
 import { calculateRiskRating } from "../src/services/riskServices";
+import { describe, it, expect } from "@jest/globals";
 
 describe("risk rating tests", () => {
   it("should return risk rating of 3. sunshine scenario.", () => {
