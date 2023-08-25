@@ -9,22 +9,3 @@
   "include": ["src/**/*.ts", "test/**/*.ts"],
   "exclude": ["node_modules"]
 }
-
-
-
-// {
-//   "compilerOptions": {
-//     "target": "ES2018", // Change as needed
-//     "module": "CommonJS",
-//     "outDir": "./dist", // Change output directory as needed
-//     "rootDir": "./src", // Change source directory as needed
-//     "strict": true,
-//     "esModuleInterop": true,
-//     "skipLibCheck": true,
-//     "forceConsistentCasingInFileNames": true,
-//     "moduleResolution": "node",
-//     "resolveJsonModule": true
-//   }
-// }
-
-
