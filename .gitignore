@@ -2,7 +2,7 @@
 node_modules/
 coverage/
 
-# Ignore compiled TypeScript files
+# Ignore compiled TypeScript filesMR
 dist/
 
 # Ignore any environment-specific configuration files
