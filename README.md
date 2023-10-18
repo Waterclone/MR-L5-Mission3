@@ -1,8 +1,8 @@
 <!-- PROJECT LOGO -->
-  <h3 align="center">L5-Mission-1 README</h3>
+  <h3 align="center">README</h3>
 
 <!-- ABOUT THE PROJECT -->
-# Level 5 - Mission 1
+# Turners Insurance Refresh
 
 Turners is currently undertaking a major re-design of its motor vehicle insurance systems and processes, including an investigation of ways in which the introduction of new technologies can enhance the buyer experience. Here is some information about motor vehicle insurance at Turners [https://www.turners.co.nz/Cars/finance-insurance/car-insurance/].  You have just been assigned to work on this project to help create a new insurance buying experience.
 
